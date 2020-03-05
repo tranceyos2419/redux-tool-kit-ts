@@ -1,3 +1,4 @@
+import { State } from './../type.d';
 import { createSlice } from '@reduxjs/toolkit';
 export const counterSlice = createSlice({
   name: 'counter',
@@ -16,17 +17,6 @@ export const counterSlice = createSlice({
 
 
 
-//todo organize def file
-
-interface Counter {
-  value: number
-}
-
-interface State {
-  counter: Counter
-}
-
-//TODO  find a better way
 export const selectCounter = (state: State) => state.counter;
 
 export const { increment, decrement } = counterSlice.actions;
