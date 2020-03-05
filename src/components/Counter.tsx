@@ -1,6 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectCounter, increment, decrement } from "../slices/counterSlice";
+import {
+  selectCounter,
+  increment,
+  decrement,
+  multiply
+} from "../slices/counterSlice";
 interface Props {}
 
 const Counter: React.FC<Props> = () => {
@@ -16,6 +21,9 @@ const Counter: React.FC<Props> = () => {
         Increment
       </button>
       <button onClick={() => dispatch(decrement())}>Decrement</button>
+      <button onClick={() => dispatch(multiply({ num: counter.value }))}>
+        Multiply
+      </button>
     </div>
   );
 };
