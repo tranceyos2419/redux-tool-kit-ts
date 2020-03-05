@@ -5,8 +5,8 @@ export const counterSlice = createSlice({
     value: 0
   },
   reducers: {
-    increment: ({ value }) => {
-      value = value + 1;
+    increment: (state) => {
+      state.value = state.value + 1;
     },
     decrement: (state) => {
       state.value = state.value - 1
@@ -15,6 +15,19 @@ export const counterSlice = createSlice({
 })
 
 
+
+//todo organize def file
+
+interface Counter {
+  value: number
+}
+
+interface State {
+  counter: Counter
+}
+
+//TODO  find a better way
+export const selectCounter = (state: State) => state.counter;
 
 export const { increment, decrement } = counterSlice.actions;
 
