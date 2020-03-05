@@ -1,9 +1,14 @@
-import React from "react";
+import React, { Dispatch } from "react";
 import Counter from "./components/Counter";
 import Push from "./components/Push";
 import Post from "./components/Post";
+import { useDispatch } from "react-redux";
+import { init } from "./slices/postSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  initPost(dispatch);
+
   return (
     <div className="App">
       <h2>App</h2>
@@ -15,3 +20,11 @@ function App() {
 }
 
 export default App;
+
+const initPost = (dispatch: Dispatch<any>) => {
+  fetch(`https://jsonplaceholder.typicode.com/posts`).then(res =>
+    res.json().then(data => {
+      dispatch(init({ posts: data }));
+    })
+  );
+};

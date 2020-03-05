@@ -8,6 +8,6 @@ export default configureStore({
   reducer: {
     counter: counterReducer,
     push: pushReducer,
-    post: postReducer
+    posts: postReducer
   },
 });

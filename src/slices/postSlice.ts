@@ -10,13 +10,13 @@ export const postSlice = createSlice({
       state.push(payload.post);
     },
     init: (state, { payload }: PayloadAction<{ posts: Post[] }>) => {
-      state = payload.posts;
+      return payload.posts;
     }
   }
 
 })
 
-export const selectPost = (state: State) => state.post;
+export const selectPost = (state: State) => state.posts;
 export const { add, init } = postSlice.actions;
 
 export const postReducer = postSlice.reducer;

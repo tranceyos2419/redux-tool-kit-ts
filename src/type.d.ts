@@ -19,5 +19,5 @@ export interface Post {
 export interface State {
   counter: Counter,
   push: Push
-  post: Post[]
+  posts: Post[]
 }
