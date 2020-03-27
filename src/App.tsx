@@ -6,8 +6,8 @@ import { useDispatch } from "react-redux";
 import { init } from "./slices/postSlice";
 
 function App() {
-  const dispatch = useDispatch();
-  initPost(dispatch);
+  // const dispatch = useDispatch();
+  // initPost(dispatch);
 
   return (
     <div className="App">
