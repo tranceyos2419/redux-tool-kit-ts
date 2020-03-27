@@ -14,10 +14,9 @@ export interface Post {
   body: string
 }
 
-
-
 export interface State {
   counter: Counter,
   push: Push
-  posts: Post[]
+  posts: Post[],
+  books: EntityState<unknown>
 }

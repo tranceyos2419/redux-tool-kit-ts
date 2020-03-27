@@ -1,6 +1,5 @@
 import { State } from './../type.d';
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
-import { async } from 'q';
 export const counterSlice = createSlice({
   name: 'counter',
   initialState: {
