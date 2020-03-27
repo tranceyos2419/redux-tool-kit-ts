@@ -1,6 +1,6 @@
 import React, { Dispatch } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectPost, init, fetchPost } from "../slices/postSlice";
+import { selectPost, init, getPost } from "../slices/postSlice";
 
 interface Props {}
 
@@ -11,7 +11,7 @@ const Post: React.FC<Props> = () => {
   return (
     <div>
       <h3>Post</h3>
-      <button onClick={() => dispatch(fetchPost(posts.length + 1))}>
+      <button onClick={() => dispatch(getPost(posts.length + 1))}>
         Get Post
       </button>
       {posts &&
