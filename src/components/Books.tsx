@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { booksSelectors, bookAdded, bookRemoved } from "../slices/bookSlice";
 import store from "../store";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 interface Props {}
 
 const Books = (props: Props) => {
   const [count, setCount] = useState(0);
-  const allBooks = booksSelectors.selectAll(store.getState());
-  console.log("allBooks:", allBooks);
+  const allBooks = useSelector(booksSelectors.selectAll);
   const dispatch = useDispatch();
   return (
     <div>
