@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { booksSelectors, bookAdded, bookRemoved } from "../slices/bookSlice";
-import store from "../store";
+import { booksSelectors, bookAdded, bookRemoved } from "../slices/booksSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 interface Props {}

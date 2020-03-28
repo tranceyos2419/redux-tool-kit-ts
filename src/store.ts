@@ -1,4 +1,4 @@
-import bookReducer from './slices/bookSlice';
+import bookReducer from './slices/booksSlice';
 import { postReducer } from './slices/postSlice';
 import pushReducer from './slices/pushSlice';
 import { configureStore } from '@reduxjs/toolkit';

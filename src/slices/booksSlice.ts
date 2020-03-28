@@ -1,8 +1,7 @@
-import { State } from './../type.d';
+import { State } from '../type';
 import {
   createEntityAdapter,
   createSlice,
-  configureStore
 } from '@reduxjs/toolkit'
 
 export interface Book {
@@ -15,12 +14,9 @@ const booksAdapter = createEntityAdapter({
   sortComparer: (a, b) => parseInt(b.id) - parseInt(a.id)
 });
 
-
-
-
 const booksSlice = createSlice({
-  name: 'bookd',
-  initialState: booksAdapter.getInitialState(),
+  name: 'books',
+  initialState: booksAdapter.getInitialState({ errors: [] }),
   reducers: {
     bookAdded: booksAdapter.addOne,
     bookRemoved: booksAdapter.removeOne,
@@ -34,6 +30,5 @@ const booksSlice = createSlice({
 export const booksSelectors = booksAdapter.getSelectors((state: State) => state.books);
 
 export const { bookAdded, bookRemoved } = booksSlice.actions;
-
 
 export default booksSlice.reducer;
